@@ -16,29 +16,26 @@
                 <span>CloudA.hosting</span>
             </div>
             <ul class="nav-menu">
-                <li><a href="#"><i class="fas fa-user"></i> Biilly Ruuder</a></li>
-                <li><a href="#"><i class="fas fa-box"></i> Products</a></li>
-                <li><a href="#"><i class="fas fa-link"></i> Integration</a></li>
-                <li><a href="#"><i class="fas fa-cloud"></i> Cloud</a></li>
-                <li><a href="#"><i class="fas fa-wifi"></i> Internet</a></li>
-                <li><a href="#"><i class="fas fa-ellipsis-h"></i> More</a></li>
-                <li><a href="#" class="btn-contact"><i class="fas fa-envelope"></i> Contact Us</a></li>
+                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#my-vps"><i class="fas fa-server"></i> My VPS</a></li>
+                <li><a href="#earn"><i class="fas fa-coins"></i> Earn Points</a></li>
+                <li><a href="https://github.com" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
                 <h1>Free VPS 6 Hours –<br>Earn by Watching Ads</h1>
                 <p>No credit card required. Get instant cloud VPS<br>by completing simple tasks.</p>
                 <div class="hero-buttons">
-                    <button class="btn-primary" onclick="showAdReward()">
-                        <i class="fas fa-play-circle"></i> Watch Ads to Earn Points
+                    <button class="btn-primary" onclick="scrollToSection('earn')">
+                        <i class="fas fa-play-circle"></i> Start Earning
                     </button>
-                    <button class="btn-secondary" onclick="showLoginModal()">
-                        <i class="fas fa-sign-in-alt"></i> Login / Register
+                    <button class="btn-secondary" onclick="googleLogin()">
+                        <i class="fab fa-google"></i> Login with Google
                     </button>
                 </div>
             </div>
@@ -48,7 +45,7 @@
         </div>
     </section>
 
-    <!-- Trust Stats -->
+    <!-- Stats Section -->
     <section class="stats">
         <div class="container">
             <h2>Trusted by thousands of users</h2>
@@ -65,57 +62,24 @@
                 </div>
                 <div class="stat-item">
                     <i class="fas fa-globe"></i>
-                    <h3>Global Locations</h3>
-                    <p>Worldwide Access</p>
+                    <h3>Global</h3>
+                    <p>Locations</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- How It Works -->
-    <section class="how-it-works">
-        <div class="container">
-            <h2>How It Works</h2>
-            <div class="steps-grid">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <i class="fas fa-user-plus"></i>
-                    <h3>Create an Account</h3>
-                    <p>Sign up in seconds.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <i class="fas fa-play-circle"></i>
-                    <h3>Watch Ads & Complete Tasks</h3>
-                    <p>Earn points by viewing ads and short links.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <i class="fas fa-coins"></i>
-                    <h3>Collect Points</h3>
-                    <p>Accumulate points in your account.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <i class="fas fa-server"></i>
-                    <h3>Get Free VPS (6 Hours)</h3>
-                    <p>Redeem points for a 6-hour VPS.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Points & Tasks Dashboard -->
-    <section class="dashboard">
+    <!-- Dashboard Section -->
+    <section class="dashboard" id="earn">
         <div class="container">
             <div class="dashboard-grid">
                 <!-- Points Card -->
                 <div class="points-card">
                     <div class="points-header">
-                        <h3>Your Points</h3>
+                        <h3><i class="fas fa-wallet"></i> Your Points</h3>
                         <div class="daily-bonus">
                             <i class="fas fa-gift"></i>
-                            <span>Daily Bonus +50</span>
+                            <span>Daily +50</span>
                         </div>
                     </div>
                     <div class="points-display">
@@ -126,35 +90,45 @@
                         <div class="progress-bar">
                             <div class="progress-fill" id="progressBar" style="width: 0%"></div>
                         </div>
+                        <small>1000 points = 1 VPS (6 hours)</small>
                     </div>
                     
                     <div class="tasks-list">
                         <div class="task-item" onclick="watchVideoAd()">
-                            <i class="fas fa-video"></i>
-                            <span>Watch Video Ads</span>
+                            <div>
+                                <i class="fas fa-video"></i>
+                                <span>Watch Video Ads</span>
+                            </div>
                             <span class="task-reward">+20 <i class="fas fa-coins"></i></span>
                         </div>
                         <div class="task-item" onclick="completeShortLink()">
-                            <i class="fas fa-link"></i>
-                            <span>Complete Short Links</span>
+                            <div>
+                                <i class="fas fa-link"></i>
+                                <span>Complete Short Links</span>
+                            </div>
                             <span class="task-reward">+20 <i class="fas fa-coins"></i></span>
                         </div>
                         <div class="task-item" onclick="dailyBonus()">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Daily Login Bonus</span>
-                            <span class="task-reward">+20 <i class="fas fa-coins"></i></span>
+                            <div>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Daily Login Bonus</span>
+                            </div>
+                            <span class="task-reward">+50 <i class="fas fa-coins"></i></span>
                         </div>
                         <div class="task-item" onclick="specialMission()">
-                            <i class="fas fa-star"></i>
-                            <span>Special Missions</span>
+                            <div>
+                                <i class="fas fa-star"></i>
+                                <span>Special Missions</span>
+                            </div>
                             <span class="task-reward">+20 <i class="fas fa-coins"></i></span>
                         </div>
                     </div>
 
-                    <!-- AdSense Placeholder -->
+                    <!-- AdSense -->
                     <div class="adsense-container">
+                        <p style="text-align:center; opacity:0.7; margin:20px 0;">📢 Advertisement</p>
                         <div class="ad-placeholder">
-                            <!-- Google AdSense Code Here -->
+                            <!-- Thay bằng mã AdSense của bạn -->
                             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                             <ins class="adsbygoogle"
                                  style="display:block"
@@ -166,55 +140,42 @@
                     </div>
                 </div>
 
-                <!-- Login Card -->
-                <div class="login-card" id="loginCard">
-                    <h3>Member Login</h3>
-                    <form id="loginForm">
-                        <div class="form-group">
-                            <input type="email" id="email" placeholder="Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="password" id="password" placeholder="Password" required>
-                        </div>
-                        <div class="form-group">
-                            <label>
-                                <input type="checkbox" id="rememberMe">
-                                <span>Remember Me</span>
-                            </label>
-                        </div>
-                        <button type="submit" class="btn-login">Login</button>
-                    </form>
-                    
-                    <div class="divider">Or sign in with</div>
-                    
-                    <div class="social-login">
-                        <button class="btn-google" onclick="googleLogin()">
+                <!-- User Card -->
+                <div class="user-card" id="userCard">
+                    <!-- Login Form -->
+                    <div id="loginSection">
+                        <h3><i class="fas fa-sign-in-alt"></i> Login to Continue</h3>
+                        <p style="margin: 20px 0; color: #6B7280;">Sign in to earn points and create VPS</p>
+                        
+                        <button class="btn-google-login" onclick="googleLogin()">
                             <i class="fab fa-google"></i>
+                            <span>Continue with Google</span>
                         </button>
-                        <button class="btn-github" onclick="githubLogin()">
-                            <i class="fab fa-github"></i>
-                        </button>
-                        <button class="btn-microsoft" onclick="microsoftLogin()">
-                            <i class="fab fa-microsoft"></i>
-                        </button>
-                    </div>
-                    
-                    <div class="signup-link">
-                        <a href="#" onclick="showRegisterModal()">Create Account ›</a>
+                        
+                        <div class="bonus-info">
+                            <i class="fas fa-gift"></i>
+                            <span>New users get <strong>300 bonus points!</strong></span>
+                        </div>
                     </div>
 
                     <!-- User Profile (Hidden initially) -->
-                    <div class="user-profile" id="userProfile" style="display: none;">
+                    <div id="profileSection" style="display: none;">
                         <div class="profile-header">
                             <img id="userAvatar" src="" alt="Avatar">
-                            <div>
+                            <div class="profile-info">
                                 <h4 id="userName"></h4>
                                 <p id="userEmail"></p>
                             </div>
                         </div>
-                        <button class="btn-redeem" onclick="redeemVPS()">
-                            <i class="fas fa-server"></i> Redeem VPS (1000 points)
+                        
+                        <button class="btn-create-vps" onclick="showVPSModal()">
+                            <i class="fas fa-plus-circle"></i> Create New VPS (1000 pts)
                         </button>
+                        
+                        <button class="btn-secondary-full" onclick="scrollToSection('my-vps')">
+                            <i class="fas fa-list"></i> View My VPS
+                        </button>
+                        
                         <button class="btn-logout" onclick="logout()">
                             <i class="fas fa-sign-out-alt"></i> Logout
                         </button>
@@ -224,137 +185,124 @@
         </div>
     </section>
 
+    <!-- My VPS Section -->
+    <section class="my-vps-section" id="my-vps">
+        <div class="container">
+            <h2><i class="fas fa-server"></i> My VPS Instances</h2>
+            <div id="vpsList" class="vps-grid">
+                <!-- VPS cards will be loaded here -->
+                <div class="empty-state" id="emptyState">
+                    <i class="fas fa-inbox"></i>
+                    <h3>No VPS Yet</h3>
+                    <p>Create your first VPS to get started!</p>
+                    <button class="btn-primary" onclick="scrollToSection('earn')">
+                        <i class="fas fa-arrow-up"></i> Earn Points
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4>Product</h4>
-                    <ul>
-                        <li><a href="#">Cloud VPS</a></li>
-                        <li><a href="#">Earning System</a></li>
-                    </ul>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-cloud"></i>
+                    <span>CloudA.hosting</span>
                 </div>
-                <div class="footer-col">
-                    <h4>Resources</h4>
-                    <ul>
-                        <li><a href="#">Help Center</a></li>
-                        <li><a href="#">Blog</a></li>
-                    </ul>
+                <div class="footer-links">
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="https://github.com" target="_blank">GitHub</a>
                 </div>
-                <div class="footer-col">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Careers</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Status Page</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <div class="footer-stats">
-                        <div><i class="fas fa-check-circle"></i> 99.9% Uptime</div>
-                        <div><i class="fas fa-clock"></i> Low Latency</div>
-                        <div><i class="fas fa-lock"></i> Secure & Encrypted</div>
-                    </div>
+                <div class="footer-stats">
+                    <span><i class="fas fa-check-circle"></i> 99.9% Uptime</span>
+                    <span><i class="fas fa-shield-alt"></i> Secure</span>
+                    <span><i class="fas fa-bolt"></i> Fast</span>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2009 Cloudidthec. All Rights Reserved</p>
-                <div class="footer-badges">
-                    <span><i class="fas fa-shield-alt"></i> VB-aidee Pacific</span>
-                    <span><i class="fas fa-check-circle"></i> 99.9% Uptime</span>
-                    <span><i class="fas fa-bolt"></i> Low Latency</span>
-                    <span><i class="fas fa-lock"></i> Secure & Encrypted</span>
-                </div>
+                <p>© 2024 CloudA.hosting. All Rights Reserved</p>
             </div>
         </div>
     </footer>
 
-    <!-- Ad Reward Modal -->
-    <div id="adModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeAdModal()">&times;</span>
-            <h2>Watch Ad to Earn Points</h2>
-            <div id="adContainer" class="ad-container">
-                <!-- Video Ad Placeholder -->
-                <div class="video-ad-placeholder">
-                    <i class="fas fa-play-circle"></i>
-                    <p>Ad will play here</p>
-                    <p class="ad-timer">Time remaining: <span id="adTimer">30</span>s</p>
-                </div>
-            </div>
-            <button class="btn-primary" id="claimReward" onclick="claimAdReward()" disabled>
-                Claim Reward (+20 points)
-            </button>
-        </div>
-    </div>
-
     <!-- VPS Creation Modal -->
     <div id="vpsModal" class="modal">
         <div class="modal-content">
-            <span class="close" onclick="closeVpsModal()">&times;</span>
-            <h2><i class="fas fa-server"></i> Create Your VPS</h2>
+            <span class="close" onclick="closeVPSModal()">&times;</span>
+            <h2><i class="fas fa-server"></i> Create New VPS</h2>
+            
             <div class="vps-form">
                 <div class="form-group">
-                    <label>Operating System</label>
+                    <label><i class="fas fa-desktop"></i> Operating System</label>
                     <select id="osVersion">
                         <option>Windows Server 2025 (Docker - 4vCPU | 8GB RAM)</option>
                         <option>Windows Server 2022 (Docker - 4vCPU | 8GB RAM)</option>
                         <option>Windows Server 2019 (Docker - 4vCPU | 8GB RAM)</option>
-                        <option>Windows Server 2012 (Docker - 4vCPU | 8GB RAM)</option>
                         <option>Windows 11 Professional (Docker - 4vCPU | 8GB RAM)</option>
                         <option>Windows 10 Professional (Docker - 4vCPU | 8GB RAM)</option>
                     </select>
                 </div>
+                
                 <div class="form-group">
-                    <label>Language</label>
+                    <label><i class="fas fa-language"></i> Language</label>
                     <select id="language">
                         <option>English</option>
                         <option>Tiếng Việt</option>
                     </select>
                 </div>
+                
                 <div class="vps-specs">
-                    <h4>VPS Specifications:</h4>
+                    <h4>Specifications:</h4>
                     <ul>
-                        <li><i class="fas fa-microchip"></i> CPU: 4 vCPU</li>
-                        <li><i class="fas fa-memory"></i> RAM: 8GB</li>
-                        <li><i class="fas fa-hdd"></i> Storage: 60GB</li>
-                        <li><i class="fas fa-clock"></i> Duration: 6 Hours</li>
+                        <li><i class="fas fa-microchip"></i> 4 vCPU</li>
+                        <li><i class="fas fa-memory"></i> 8GB RAM</li>
+                        <li><i class="fas fa-hdd"></i> 60GB Storage</li>
+                        <li><i class="fas fa-clock"></i> 6 Hours Runtime</li>
                         <li><i class="fas fa-coins"></i> Cost: 1000 Points</li>
                     </ul>
                 </div>
+                
                 <button class="btn-primary btn-full" onclick="createVPS()">
                     <i class="fas fa-rocket"></i> Create VPS Now
                 </button>
             </div>
-            <div id="vpsResult" class="vps-result" style="display: none;">
-                <div class="success-message">
-                    <i class="fas fa-check-circle"></i>
-                    <h3>VPS Created Successfully!</h3>
-                </div>
-                <div class="connection-info">
-                    <h4><i class="fas fa-desktop"></i> RDP Connection:</h4>
-                    <p><strong>IP:</strong> <span id="rdpIP"></span></p>
-                    <p><strong>Username:</strong> Admin</p>
-                    <p><strong>Password:</strong> Window@123456</p>
-                    <button class="btn-copy" onclick="copyRDP()">Copy RDP Info</button>
-                </div>
-                <div class="connection-info">
-                    <h4><i class="fas fa-globe"></i> Web Viewer:</h4>
-                    <p><strong>URL:</strong> <a id="webURL" href="#" target="_blank"></a></p>
-                </div>
+        </div>
+    </div>
+
+    <!-- VPS Details Modal -->
+    <div id="vpsDetailsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeDetailsModal()">&times;</span>
+            <h2><i class="fas fa-info-circle"></i> VPS Connection Info</h2>
+            
+            <div id="vpsDetailsContent">
+                <!-- Will be populated dynamically -->
             </div>
         </div>
     </div>
 
-    <!-- Firebase Configuration -->
+    <!-- Ad Reward Modal -->
+    <div id="adModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAdModal()">&times;</span>
+            <h2><i class="fas fa-video"></i> Watch Ad to Earn</h2>
+            <div class="ad-container">
+                <div class="video-ad-placeholder">
+                    <i class="fas fa-play-circle"></i>
+                    <p>Advertisement</p>
+                    <p class="ad-timer">Time remaining: <span id="adTimer">30</span>s</p>
+                </div>
+            </div>
+            <button class="btn-primary btn-full" id="claimReward" onclick="claimAdReward()" disabled>
+                <i class="fas fa-gift"></i> Claim Reward (+20 points)
+            </button>
+        </div>
+    </div>
+
+    <!-- Firebase & App Scripts -->
     <script type="module" src="firebase-config.js"></script>
     <script src="app.js"></script>
 </body>
